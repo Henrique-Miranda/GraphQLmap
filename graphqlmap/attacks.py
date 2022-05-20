@@ -71,7 +71,8 @@ def dump_schema(url, method, graphversion, headers, use_json, proxy):
                         cmdlist.append(args_name)
 
                         # generate mutation query
-                        mutation_args += args_name + ":" + args_ttype + ","
+                        if not args_name and not args_ttype:
+                            mutation_args += args_name + ":" + args_ttype + ","
                     print("")
 
                     if (types['name'].lower().strip() == "mutations"):
