@@ -72,6 +72,8 @@ def dump_schema(url, method, graphversion, headers, use_json, proxy):
 
                         # generate mutation query
                         if not args_name and not args_ttype:
+                            mutation_args += f'{args_name}:{args_ttype},'
+                        else:
                             mutation_args += args_name + ":" + args_ttype + ","
                     print("")
 
